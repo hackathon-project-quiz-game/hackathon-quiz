@@ -1,39 +1,30 @@
-import { Component } from "react";
-import questions from "../data";
-import Question from "./Question";
 
-class Questions extends Component {
-  render() {
-    const ques = questions.map((question, i) => {
-      return (
-        <div class="questions-card">
-           {/* <div class="name-container">
-            <h2>{question.title} Qtitle</h2>
+import React from 'react'
+import questions from '../data'
 
-          </div>
-          <div>
-            <br></br>
-            Answers:
-            <br></br>
-            <br></br>
-            <li>a) {question.answers.a}</li>
-            <li>b) {question.answers.b}</li>
-            <li>c) {question.answers.c}</li>
-          </div>  */}
-          <Question key={i} question={question}/>
-        </div>
-      );
-    });
-
+function Questions() {
     return (
-      <>
-        <div class="backgroundpicI">
-          <h2>Quiz</h2>
-         {ques}
+        <div>
+            <div className='question-section'>
+                <div className='question-count'>
+                    <span>Question 1</span>/{questions.length}
+                </div>
+                <div className='question-text'>{questions[1].title}</div>
+            </div>
+            <div className='answer-section'>
+                {questions[1].answers.map((answerOption, index) => (
+                    <div>
+                        <button>{answerOption.a}</button>
+                        <br />
+                        <button>{answerOption.b}</button>
+                        <br />
+                        <button>{answerOption.c}</button>
+                    </div>
+                ))}
+            </div>
         </div>
-      </>
-    );
-  }
+    )
 }
 
-export default Questions;
+export default Questions
+
