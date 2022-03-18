@@ -1,14 +1,17 @@
-import './App.css';
-import ScoreBoard from './components/ScoreBoard';
-import Questions from './components/Questions';
-import FinalScore from './components/FinalScore';
-import questions from '../src/data';
-import { useState } from 'react';
+import "./App.css";
+import ScoreBoard from "./components/ScoreBoard";
+import Questions from "./components/Questions";
+import FinalScore from "./components/FinalScore";
+import questions from "../src/data";
+import { useState } from "react";
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
+
+  const [currentAnswer, setCurrentAnswer] = useState("");
+
   const [isCorrect, setIsCorrect] = useState(null)
 
   const handleCorrectAnswerClick = (isCorrect) => {
@@ -26,7 +29,29 @@ function App() {
     } else {
       setShowScore(true)
     }
-  }
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    let nextQuestion = currentQuestion + 1;
+  
+    if (nextQuestion < questions.length) {
+      setCurrentQuestion(nextQuestion);
+    } 
+
+    if (questions[currentQuestion].correctAnswer == currentAnswer) {
+      setScore(score + 1);
+      alert("Correct!")
+    }
+    if (questions[currentQuestion].correctAnswer != currentAnswer) {
+      alert("WRONG!")
+    }
+  };
+
+  const onChangeHandler = (e) => {
+    let currentAnswer = e.target.value;
+    setCurrentAnswer(currentAnswer);
+  };
 
   return (
     <div className='font-rajhdani flex flex-col justify-center items-center bg-slate-400 h-screen py-5'>
@@ -45,10 +70,11 @@ function App() {
           <Questions
             question={questions[currentQuestion]}
             handleCorrectAnswerClick={handleCorrectAnswerClick}
-            correctAnswer={isCorrect}
+            submitHandler={submitHandler}
+            onChangeHandler={onChangeHandler}
           />
         </div>
-      }
+      )}
     </div>
   );
 }
