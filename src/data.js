@@ -1,25 +1,40 @@
 const questions = [
   {
-    title: "Who invented JavaScript?",
-    answers: ["Douglas Crockford","Sheryl Sandberg","Brendan Eich"
+    title: "Which rap group released the album Straight Outta Compton?",
+    answers: ["NWA", "Wu-Tang Clan", "Run-D.M.C.", "Beastie Boys"],
+    correctAnswer: 0,
+  },
+  {
+    title: "What was the title of the first Bond movie, released in 1962?",
+    answers: ["From Russia with Love", "Goldfinger", "Thunderball", "Dr. No"],
+    correctAnswer: 3,
+  },
+  {
+    title:
+      "Which of these is NOT a main playable character in Grand Theft Auto V?",
+    answers: ["Trevor", "Michael", "Lamar", "Franklin"],
+    correctAnswer: 2,
+  },
+  {
+    title: "What does DNA stand for?",
+    answers: [
+      "Deoxyribonucleic Acid",
+      "Deoxyribogenetic Acid",
+      "Deoxyribogenetic Atoms",
+      "Detoxic Acid",
     ],
     correctAnswer: 2
   },
   {
-    title: "Which one of these is a JavaScript package manager?",
-    answers: ["Node.js","TypeScript","npm"],
-    correctAnswer: 2
+    title: "Hallelujah is a song written by which Canadian recording artist?",
+    answers: ["Justin Bieber", "Leonard Cohen", "Shania Twain", "The Weeknd"],
+    correctAnswer: 1,
   },
   {
-    title: "Which tool can you use to ensure code quality?",
-    answers: {
-      a: "Angular",
-      b: "jQuery",
-      c: "RequireJS",
-      d: "ESLint"
-    },
-    correctAnswer: "d"
-  }
+    title: "What is the French word for hat?",
+    answers: ["Bonnet", "Chapeau", " Casque", "Robe"],
+    correctAnswer: 1,
+  },
 ];
 
-export default questions
+export default questions;
