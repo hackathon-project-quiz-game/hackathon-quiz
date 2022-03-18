@@ -1,3 +1,4 @@
+
 import React from 'react'
 import questions from '../data'
 
@@ -26,3 +27,4 @@ function Questions() {
 }
 
 export default Questions
+
