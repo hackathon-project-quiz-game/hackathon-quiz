@@ -74,7 +74,7 @@ function App() {
             onChangeHandler={onChangeHandler}
           />
         </div>
-      )}
+      }
     </div>
   );
 }
