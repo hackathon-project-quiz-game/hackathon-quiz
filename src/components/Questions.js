@@ -13,10 +13,10 @@ function Questions(props) {
             <div className='answer-section'>
                 {props.question.answers.map((answerOption, index) => (
                     <div>
-                        <button onClick={props.handleClick}>{answerOption}</button>
+                        <button key={index} onClick={()=>props.handleCorrectAnswerClick(index === props.question.correctAnswer ? true : false)}>{answerOption}</button>
                     </div>
                 ))}
-                <button onClick={props.handleClick}>next</button>
+                {/* <button onClick={props.handleClick}>next</button> */}
             </div>
         </div>
     )
