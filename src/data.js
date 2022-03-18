@@ -23,7 +23,7 @@ const questions = [
       "Deoxyribogenetic Atoms",
       "Detoxic Acid",
     ],
-    correctAnswer: 0,
+    correctAnswer: 0
   },
   {
     title: "Hallelujah is a song written by which Canadian recording artist?",
