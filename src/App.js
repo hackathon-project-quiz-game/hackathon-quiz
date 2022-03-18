@@ -9,20 +9,27 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
-  const [isCorrect, setIsCorrect] = useState(null)
+  const [correctState, setCorrectState] = useState("")
 
   const handleCorrectAnswerClick = (isCorrect) => {
     console.log(isCorrect)
     let nextQuestion = currentQuestion + 1
     if (isCorrect) {
+      setCorrectState("bg-green-400 text-gray-400")
       setTimeout(() => {
         setScore(score + 1);
-      }, 2000);
+        setCorrectState("")
+      }, 1000);
+    } else {
+      setCorrectState("bg-red-400 text-gray-400")
+      setTimeout(() => {
+        setCorrectState("")
+      }, 1000);
     }
     if (nextQuestion < questions.length) {
       setTimeout(() => {
         setCurrentQuestion(nextQuestion);
-      }, 2500);
+      }, 1500);
     } else {
       setShowScore(true)
     }
@@ -45,7 +52,7 @@ function App() {
           <Questions
             question={questions[currentQuestion]}
             handleCorrectAnswerClick={handleCorrectAnswerClick}
-            correctAnswer={isCorrect}
+            correctAnswer={correctState}
           />
         </div>
       }
