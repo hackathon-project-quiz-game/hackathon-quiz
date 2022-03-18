@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import ScoreBoard from './components/ScoreBoard';
 import Question from './Questions';
-
 function App() {
   return (
-    <div className="App">  
-       <Question />
+    <div className='font-rajhdani'>
+      <ScoreBoard />
+    <Question />
     </div>
   );
 }
