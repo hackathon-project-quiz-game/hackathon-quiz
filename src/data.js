@@ -1,20 +1,20 @@
 const questions = [
   {
     title: "Who invented JavaScript?",
-    answers: {
+    answers: [{
       a: "Douglas Crockford",
       b: "Sheryl Sandberg",
       c: "Brendan Eich"
-    },
+    }],
     correctAnswer: "c"
   },
   {
     title: "Which one of these is a JavaScript package manager?",
-    answers: {
+    answers: [{
       a: "Node.js",
       b: "TypeScript",
       c: "npm"
-    },
+    }],
     correctAnswer: "c"
   },
   {

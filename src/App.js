@@ -1,11 +1,11 @@
 import './App.css';
 import ScoreBoard from './components/ScoreBoard';
-import Question from './Questions';
+import Questions from './components/Questions';
 function App() {
   return (
     <div className='font-rajhdani'>
       <ScoreBoard />
-    <Question />
+    <Questions />
     </div>
   );
 }
