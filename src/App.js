@@ -9,18 +9,25 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
+
   const [currentAnswer, setCurrentAnswer] = useState("");
 
+  const [isCorrect, setIsCorrect] = useState(null)
+
   const handleCorrectAnswerClick = (isCorrect) => {
-    console.log(isCorrect);
+    console.log(isCorrect)
+    let nextQuestion = currentQuestion + 1
     if (isCorrect) {
-      setScore(score + 1);
-      let nextQuestion = currentQuestion + 1;
-      if (nextQuestion < questions.length) {
+      setTimeout(() => {
+        setScore(score + 1);
+      }, 2000);
+    }
+    if (nextQuestion < questions.length) {
+      setTimeout(() => {
         setCurrentQuestion(nextQuestion);
-      } else {
-        setShowScore(true);
-      }
+      }, 2500);
+    } else {
+      setShowScore(true)
     }
   };
 
@@ -47,13 +54,13 @@ function App() {
   };
 
   return (
-    <div className="font-rajhdani flex flex-col justify-center items-center">
-      {showScore ? (
-        <div className="container">
+    <div className='font-rajhdani flex flex-col justify-center items-center bg-slate-400 h-screen py-5'>
+      {showScore ?
+        <div className='container'>
           <FinalScore />
         </div>
-      ) : (
-        <div className="container">
+        :
+        <div className='container'>
           <ScoreBoard
             score={score}
             currentQuestion={currentQuestion + 1}

@@ -3,7 +3,7 @@
 
 function ScoreBoard(props) {
     return (
-        <div className="board flex justify-center w-screen mb-4">
+        <div className="board flex justify-center w-auto mb-4 mt-1">
             <div className="flex bg-gray-600 w-4/6 justify-between m-8  font-bold rounded border-4 border-slate-300 px-2">
                 <div className="px-7 flex flex-col justify-center items-center m-3  bg-gray-100  w-20 rounded-md">
                     <div><span className="text-sky-600">question</span></div>
