@@ -14,7 +14,7 @@ function Questions(props) {
             <div className='answer-section text-gray-300 grid grid-cols-2 mt-10 gap-x-28 gap-y-4 '>
                 {props.question.answers.map((answerOption, index) => (
                     <div className=''>
-                        <button className={`font-medium border-2 border-slate-300 hover:border-slate-500 rounded-sm py-1 px-2 w-44 active:bg-gray-600 ${index === props.question.correctAnswer ? "bg-green-300" : "bg-red-400"}`}
+                        <button className={`font-medium border-2 border-slate-300 hover:border-slate-500 rounded-sm py-1 px-2 w-44 active:bg-gray-600`}
                             key={index}
                             onClick={() => props.handleCorrectAnswerClick(index === props.question.correctAnswer ? true : false)}
                         >
