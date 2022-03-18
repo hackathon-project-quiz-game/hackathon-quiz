@@ -4,7 +4,6 @@ import Questions from './components/Questions';
 import questions from '../src/data';
 import { useState } from 'react';
 
-
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
